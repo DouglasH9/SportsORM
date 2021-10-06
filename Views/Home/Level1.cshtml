@@ -1,0 +1,72 @@
+<div class="card">
+    <div class="card-header bg-dark text-light">Level 1</div>
+    <div class="card-body">
+        <p>Using the SportsORM, complete all the following queries and show their results on Level1.cshtml.</p>
+        <ol>
+            <li>...all womens' leagues</li>
+            @{
+                foreach (League league in ViewBag.womensLeagues)
+                {
+                    <p>@league.Name</p>
+                }
+            }
+            <li>...all leagues where sport is any type of hockey</li>
+            @{
+                foreach (League hleague in ViewBag.hockey)
+                {
+                    <p>@hleague.Name</p>
+                }
+            }
+            <li>...all leagues where sport is something OTHER THAN football</li>
+            @{
+                foreach (League league in ViewBag.notFootball)
+                {
+                    <p>@league.Name</p>
+                }
+            }
+            <li>...all leagues that call themselves "conferences"</li>
+            @{
+                foreach (League league in ViewBag.conferences)
+                {
+                    <p>@league.Name</p>
+                }
+            }
+            <li>...all leagues in the Atlantic region</li>
+            @{
+                foreach (League league in ViewBag.isAtlantic)
+                {
+                    <p>@league.Name</p>
+                }
+            }
+            <li>...all teams based in Dallas</li>
+            @{
+                foreach (Team team in ViewBag.dallasTeams)
+                {
+                    <p>@team.TeamName</p>
+                }
+            }
+            <li>...all teams named the Raptors</li>
+            @{
+                foreach (Team team in ViewBag.raptor)
+                {
+                    <p>@team.Location @team.TeamName</p>
+                }
+            }
+            <li>...all teams whose location includes "City"</li>
+            @{
+                foreach (Team team in ViewBag.city)
+                {
+                    <p>@team.Location @team.TeamName</p>
+                }
+            }
+            <li>...all teams whose names begin with "T"</li>
+            
+            <li>...all teams, ordered alphabetically by location</li>
+            <li>...all teams, ordered by team name in reverse alphabetical order</li>
+            <li>...every player with last name "Cooper"</li>
+            <li>...every player with first name "Joshua"</li>
+            <li>...every player with last name "Cooper" EXCEPT those with "Joshua" as the first name</li>
+            <li>...all players with first name "Alexander" OR first name "Wyatt"</li>
+        </ol>
+    </div>
+</div>

@@ -47,8 +47,8 @@ namespace SportsORM.Controllers
             ViewBag.raptor = raptor;
             List<Team> city = _context.Teams.Where(team => team.Location.Contains("City")).ToList();
             ViewBag.city = city;
-            // List<Team> tTeams = _context.Teams.Where(team => team.TeamName[0].IsLetter(T)).ToList();
-            // ViewBag.tTeams = tTeams;
+            List<Team> tTeams = _context.Teams.Where(team =>  team.TeamName.StartsWith("T")).ToList();
+            ViewBag.tTeams = tTeams;
             return View();
         }
 

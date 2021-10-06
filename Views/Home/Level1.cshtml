@@ -60,7 +60,12 @@
                 }
             }
             <li>...all teams whose names begin with "T"</li>
-            
+            @{
+                foreach (Team team in ViewBag.tTeams)
+                {
+                    <p>@team.Location @team.TeamName</p>
+                }
+            }
             <li>...all teams, ordered alphabetically by location</li>
             <li>...all teams, ordered by team name in reverse alphabetical order</li>
             <li>...every player with last name "Cooper"</li>

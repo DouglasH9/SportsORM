@@ -49,6 +49,20 @@ namespace SportsORM.Controllers
             ViewBag.city = city;
             List<Team> tTeams = _context.Teams.Where(team =>  team.TeamName.StartsWith("T")).ToList();
             ViewBag.tTeams = tTeams;
+            List<Team> alphabeticalTeams = _context.Teams.OrderBy(team => team.Location).ToList();
+            ViewBag.alphabeticalTeams = alphabeticalTeams;
+            List<Team> revAlphaTeams = _context.Teams.OrderByDescending(team => team.TeamName).ToList();
+            ViewBag.revAlphaTeams = revAlphaTeams;
+            List<Player> coopPlayer = _context.Players.Where(player => player.LastName == "Cooper").ToList();
+            ViewBag.coopPlayer = coopPlayer;
+            List<Player> joshPlayer = _context.Players.Where(player => player.FirstName == "Joshua").ToList();
+            ViewBag.joshPlayer = joshPlayer;
+
+            List<Player> notJoshPlayer = _context.Players.Where(player => player.LastName == "Cooper" && player.FirstName != "Joshua").ToList();
+            ViewBag.notJoshPlayer = notJoshPlayer;
+
+            List<Player> alexOrWyatt = _context.Players.Where(player => player.FirstName == "Alexander" || player.FirstName == "Wyatt").ToList();
+            ViewBag.alexOrWyatt = alexOrWyatt;
             return View();
         }
 

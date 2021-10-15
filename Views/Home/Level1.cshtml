@@ -67,11 +67,47 @@
                 }
             }
             <li>...all teams, ordered alphabetically by location</li>
+            @{
+                foreach (Team team in ViewBag.alphabeticalTeams)
+                {
+                    <p>@team.Location @team.TeamName</p>
+                }
+            }
             <li>...all teams, ordered by team name in reverse alphabetical order</li>
+            @{
+                foreach (Team team in ViewBag.revAlphaTeams)
+                {
+                    <p>@team.TeamName @team.Location</p>
+                }
+            }
             <li>...every player with last name "Cooper"</li>
+            @{
+                foreach (Player player in ViewBag.coopPlayer)
+                {
+                    <p>@player.FirstName @player.LastName</p>
+                }
+            }
             <li>...every player with first name "Joshua"</li>
+            @{
+                foreach (Player player in ViewBag.joshPlayer)
+                {
+                    <p>@player.FirstName @player.LastName</p>
+                }
+            }
             <li>...every player with last name "Cooper" EXCEPT those with "Joshua" as the first name</li>
+            @{
+                foreach (Player player in ViewBag.notJoshPlayer)
+                {
+                    <p>@player.FirstName @player.LastName</p>
+                }
+            }
             <li>...all players with first name "Alexander" OR first name "Wyatt"</li>
+            @{
+                foreach (Player player in ViewBag.alexOrWyatt)
+                {
+                    <p>@player.FirstName @player.LastName</p>
+                }
+            }
         </ol>
     </div>
 </div>
